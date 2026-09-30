@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashlee Ramírez | Hoja de vida</title>
+<meta name="description" content="Hoja de vida de Ashlee Ramírez, estudiante del Instituto Guática apasionada por el fútbol.">
+<style>
+:root{--grass:#178a45;--grass2:#1d9d51;--deep:#0d2b1a;--chalk:#f7fbf5;--gold:#ffd23f;--ink:#0d2b1a;--soft:#4a6355;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Trebuchet MS","Segoe UI",system-ui,Arial,sans-serif;background:var(--chalk);color:var(--ink);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:Impact,"Arial Black","Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;line-height:1.05;letter-spacing:.02em}
+.bar{position:fixed;top:0;left:0;width:100%;height:5px;background:var(--gold);transform:scaleX(0);transform-origin:left;z-index:9;animation:grow linear both;animation-timeline:scroll()}
+@keyframes grow{to{transform:scaleX(1)}}
+
+/* CANCHA */
+.pitch{position:relative;color:#fff;text-align:center;padding:64px 20px 110px;overflow:hidden;
+background:repeating-linear-gradient(90deg,var(--grass) 0 70px,var(--grass2) 70px 140px);animation:mow 12s linear infinite}
+@keyframes mow{to{background-position:140px 0}}
+.pitch::before{content:"";position:absolute;left:50%;top:50%;width:340px;height:340px;margin:-170px 0 0 -170px;border:4px solid rgba(255,255,255,.35);border-radius:50%}
+.pitch::after{content:"";position:absolute;left:0;right:0;top:50%;height:4px;background:rgba(255,255,255,.35)}
+.pitch>*{position:relative;z-index:1}
+.kicker{display:inline-block;background:var(--gold);color:var(--deep);font-weight:700;padding:4px 16px;transform:skew(-10deg);animation:drop .6s both}
+@keyframes drop{from{opacity:0;transform:skew(-10deg) translateY(-30px)}}
+h1{font-size:clamp(3rem,12vw,7.5rem);margin:14px 0 4px;text-shadow:4px 4px 0 var(--deep);animation:zoom .8s .2s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes zoom{from{opacity:0;transform:scale(1.6)}}
+.sub{font-size:1.2rem;max-width:34ch;margin:0 auto;text-shadow:0 2px 0 var(--deep);animation:fade 1s .8s both}
+@keyframes fade{from{opacity:0}}
+.score{display:inline-flex;gap:0;margin-top:26px;border:3px solid var(--deep);background:var(--deep);animation:fade 1s 1.1s both}
+.score div{padding:8px 22px;text-align:center}
+.score div+div{border-left:2px solid #2b5a3f}
+.score b{display:block;font:400 2rem Impact,"Arial Black",sans-serif;color:var(--gold)}
+.score span{font-size:.75rem;opacity:.85}
+.ball{position:absolute;bottom:14px;left:-60px;font-size:3rem;z-index:2;line-height:1;animation:roll 9s linear infinite}
+.ball span{display:block;animation:spin 1.6s linear infinite}
+@keyframes roll{to{transform:translateX(calc(100vw + 120px))}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.shadow{position:absolute;bottom:10px;left:0;width:100%;height:4px;background:rgba(255,255,255,.4);z-index:1}
+
+/* CINTA */
+.tape{background:var(--gold);color:var(--deep);overflow:hidden;white-space:nowrap;font:400 1.3rem Impact,"Arial Black",sans-serif;padding:8px 0;letter-spacing:.06em}
+.tape div{display:inline-block;padding-left:100%;animation:tick 22s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+
+/* CUERPO */
+main{max-width:1000px;margin:0 auto;padding:48px 20px 24px;display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start}
+.player{position:sticky;top:20px;background:linear-gradient(160deg,var(--gold),#f3a712);border:4px solid var(--deep);padding:18px;text-align:center;box-shadow:8px 8px 0 var(--deep);animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px) rotate(-1deg)}}
+.player .num{font:400 3.6rem Impact,sans-serif;line-height:1}
+.player .avatar{width:120px;height:120px;border-radius:50%;background:var(--deep);color:var(--gold);display:grid;place-items:center;font:400 3rem Impact,sans-serif;margin:8px auto;border:4px solid #fff}
+.player h3{font-size:1.5rem}
+.player p{font-size:.9rem;font-weight:700}
+.stat{display:flex;justify-content:space-between;font-weight:700;font-size:.9rem;margin-top:10px}
+.stat+i{display:block;height:9px;background:rgba(13,43,26,.25)}
+.stat+i::after{content:"";display:block;height:100%;width:0;background:var(--deep);animation:fill 1.4s 1s ease-out forwards}
+@keyframes fill{to{width:var(--v)}}
+section{margin-bottom:34px;animation:up .6s both}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+@supports (animation-timeline:view()){section{animation:up linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+h2{font-size:2.2rem;color:var(--grass);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+h2::after{content:"";flex:1;height:4px;background:repeating-linear-gradient(90deg,var(--deep) 0 12px,transparent 12px 20px)}
+p{max-width:60ch}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.skill{background:var(--card);border:3px solid var(--deep);padding:16px;position:relative;transition:transform .25s,box-shadow .25s,background .25s}
+.skill:hover{transform:translate(-5px,-5px) rotate(-1deg);box-shadow:7px 7px 0 var(--grass);background:var(--gold)}
+.skill b{font:400 1.3rem Impact,sans-serif;text-transform:uppercase;display:block}
+.skill span{font-size:.9rem;color:var(--soft)}
+.skill:hover span{color:var(--deep)}
+.skill em{position:absolute;top:8px;right:12px;font-style:normal;font-size:1.6rem;transition:transform .5s}
+.skill:hover em{transform:rotate(360deg) scale(1.3)}
+.data{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.data div{background:var(--deep);color:#fff;padding:14px 18px}
+.data small{color:var(--gold);display:block;font-size:.8rem}
+.data b{font-size:1.15rem}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags span{background:var(--grass);color:#fff;padding:6px 18px;font-weight:700;border-radius:99px;transition:transform .2s,background .2s;animation:bob 3s ease-in-out infinite}
+.tags span:nth-child(2){animation-delay:.5s}.tags span:nth-child(3){animation-delay:1s}
+.tags span:hover{background:var(--gold);color:var(--deep);transform:scale(1.12) rotate(-3deg)}
+@keyframes bob{50%{transform:translateY(-5px)}}
+footer{background:var(--deep);color:#fff;text-align:center;padding:26px 20px;font:400 1.5rem Impact,"Arial Black",sans-serif;letter-spacing:.05em}
+footer span{color:var(--gold)}
+@media (max-width:800px){
+main{grid-template-columns:1fr}
+.player{position:static;max-width:320px;margin:0 auto}
+.skills,.data{grid-template-columns:1fr}
+.pitch::before{width:220px;height:220px;margin:-110px 0 0 -110px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.stat+i::after{width:var(--v)}.ball{display:none}}
+@media print{.bar,.ball,.tape{display:none}*{animation:none!important}.stat+i::after{width:var(--v)}}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+
+<header class="pitch">
+  <span class="kicker">Hoja de vida</span>
+  <h1>Ashlee<br>Ramírez</h1>
+  <p class="sub">Estudiante del Instituto Guática. Apasionada por el fútbol.</p>
+  <div class="score" aria-label="Datos rápidos">
+    <div><b>16</b><span>AÑOS</span></div>
+    <div><b>4</b><span>HABILIDADES</span></div>
+    <div><b>1</b><span>GRAN PASIÓN</span></div>
+  </div>
+  <div class="shadow"></div>
+  <div class="ball" aria-hidden="true"><span>⚽</span></div>
+</header>
+
+<div class="tape" aria-hidden="true"><div>FÚTBOL ✦ RESPONSABILIDAD ✦ APRENDIZAJE RÁPIDO ✦ COMUNICACIÓN ✦ TRABAJO EN EQUIPO ✦ DEPORTE ✦ FÚTBOL ✦ RESPONSABILIDAD ✦ APRENDIZAJE RÁPIDO ✦ COMUNICACIÓN ✦</div></div>
+
+<main>
+  <aside class="player" aria-label="Tarjeta de jugadora">
+    <div class="num">16</div>
+    <!-- Para poner una foto: cambia el div "avatar" por <img class="avatar" src="foto.jpg" alt="Foto de Ashlee" style="object-fit:cover"> -->
+    <div class="avatar">AR</div>
+    <h3>Ashlee Ramírez</h3>
+    <p>Instituto Guática</p>
+    <div class="stat"><span>Fútbol</span><span>90</span></div><i style="--v:90%"></i>
+    <div class="stat"><span>Responsabilidad</span><span>88</span></div><i style="--v:88%"></i>
+    <div class="stat"><span>Aprendizaje rápido</span><span>85</span></div><i style="--v:85%"></i>
+    <div class="stat"><span>Comunicación</span><span>82</span></div><i style="--v:82%"></i>
+  </aside>
+
+  <div>
+    <section>
+      <h2>Perfil</h2>
+      <p>Soy una estudiante responsable, amable y comprometida. Me gusta aprender cosas nuevas y trabajar en equipo. Tengo interés por los deportes, especialmente el fútbol.</p>
+    </section>
+
+    <section>
+      <h2>Datos</h2>
+      <div class="data">
+        <div><small>Edad</small><b>16 años</b></div>
+        <div><small>Estudios</small><b>Instituto Guática</b></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <div class="skill"><em>⚽</em><b>Fútbol</b><span>Buena jugando fútbol.</span></div>
+        <div class="skill"><em>✅</em><b>Responsabilidad</b><span>Cumplo con lo que me comprometo.</span></div>
+        <div class="skill"><em>⚡</em><b>Aprendizaje rápido</b><span>Aprendo cosas nuevas con facilidad.</span></div>
+        <div class="skill"><em>💬</em><b>Comunicación</b><span>Me expreso bien y trabajo en equipo.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Intereses</h2>
+      <div class="tags"><span>Los deportes</span><span>El fútbol</span><span>Trabajo en equipo</span></div>
+    </section>
+  </div>
+</main>
+
+<footer>Juega en equipo, aprende siempre <span>⚽</span></footer>
+</body>
+</html>
